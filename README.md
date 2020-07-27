@@ -36,7 +36,7 @@ http://www.blueclouds.club/
       }
       ```
     - 传递参数格式：
-    - |  name   | type  |
+      |  name   | type  |
       |  ----  | ----  |
       | title  | string |
       | info  | string |
