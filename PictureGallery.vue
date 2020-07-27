@@ -45,6 +45,24 @@
     </div>
 </template>
 <script>
+    Array.prototype.next = function(arrItem){
+      const index = this.indexOf(arrItem)
+      if (index === this.length -1){
+        return this[0]
+      }
+      else {
+        return this[index+1]
+      }
+    }
+    Array.prototype.previous = function(arrItem){
+      const index = this.indexOf(arrItem)
+      if (index === 0){
+        return this[this.length-1]
+      }
+      else {
+        return this[index-1]
+      }
+    }
     export default {
         name: "PictureGallery",
         props:{
@@ -66,6 +84,7 @@
             init:function () {
                 this.PictureArrInit()
             },
+            //初始化对象转换
             PictureArrInit:function () {
                 this.PictureArr.forEach((item,index)=>{
                     let object = {}
@@ -85,6 +104,7 @@
                 })
                 this.PictureObjectArr[0].isShow = true
             },
+            //图片切换方法
             PictureChange:function (index,type) {
                 if (typeof index !== 'undefined'){
                     this.GalleryShowChange('open')
@@ -109,6 +129,7 @@
                     }
                 }
             },
+            //隐藏图片方法
             PictureUnShow:function(){
                 for (let item of this.PictureObjectArr){
                     if (item.isShow){
@@ -117,23 +138,26 @@
                     }
                 }
             },
+            //设置图片介绍方法
             PictureMessageSet:function(title,info){
                 this.PictureTitle = title
                 this.PictureInfo = info
             },
+            //画廊显示切换方法
             GalleryShowChange:function (type = 'close') {
                 if (type === 'open'){
-                    document.body.style.overflow = 'hidden'
+                    document.body.style.overflow = 'hidden'//固定滚动条 防止显示画廊的时候可以滚动被遮住页面
                     this.GalleryIsShow = true
                 }
                 else {
                     this.PictureUnShow()
-                    setTimeout(()=>{
+                    setTimeout(()=>{ //延时解锁滚动条 延时是为了让图像过度动画完成
                         this.GallerPreviewIsShow = false
                         this.GalleryIsShow = false
                         document.body.style.overflow = 'auto'},400)
                 }
             },
+            
         },
         mounted() {
             this.init()
