@@ -4,10 +4,6 @@
 
 [![License](https://badgen.net/github/license/sequelize/sequelize)](https://github.com/sequelize/sequelize/blob/master/LICENSE)
 
-## 效果地址
-
-http://www.blueclouds.club/
-
 ## 如何使用？
 
 + 拉取文件 git clone git@github.com:FeiBam/Picture-Gallery.git
@@ -46,6 +42,11 @@ http://www.blueclouds.club/
 
 
 
+## 效果
+
+![avatar](./info/1.png)
+![avatar](./info/2.png)
+![avatar](./info/3.png)
 
 ## License
 
