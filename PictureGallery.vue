@@ -106,7 +106,7 @@
                     }
                     else {
                         this.PictureObjectArr.previous(unShowItem).isShow = true
-                        this.PictureMessageSet(this.PictureObjectArr.previous(unShowItem).about.title,this.PictureObjectArr.next(unShowItem).about.info)
+                        this.PictureMessageSet(this.PictureObjectArr.previous(unShowItem).about.title,this.PictureObjectArr.previous(unShowItem).about.info)
                     }
                 }
             },
